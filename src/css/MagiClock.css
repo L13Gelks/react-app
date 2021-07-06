@@ -1,0 +1,87 @@
+#section {
+  position: relative;
+  justify-content: center;
+  height: 80%;
+  width: auto;
+  border: 2px solid #0088a9;
+  background-color: black;
+  border-radius: 5px;
+  overflow-x: hidden;
+  right: 20px;
+}
+
+.hour,
+.min,
+.sec {
+  color: white;
+  background: black;
+  font-size: 3vw;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  user-select: none;
+}
+.col {
+  display: inline-block;
+  color: white;
+  background: black;
+  font-size: 2.5vw;
+  user-select: none;
+}
+
+.hour::before {
+  content: attr(hour-value);
+  position: absolute;
+  mix-blend-mode: difference;
+  filter: blur(3px);
+}
+.min::before {
+  content: attr(min-value);
+  position: absolute;
+  mix-blend-mode: difference;
+  filter: blur(3px);
+}
+.sec::before {
+  content: attr(sec-value);
+  position: absolute;
+  mix-blend-mode: difference;
+  filter: blur(3px);
+}
+.col::before {
+  content: ":";
+  position: absolute;
+  mix-blend-mode: difference;
+  filter: blur(3px);
+}
+.neon-wrapper {
+  display: inline-flex;
+  filter: brightness(100%);
+  overflow: hidden;
+}
+.gradient {
+  background: linear-gradient(
+    110.8210951619775deg,
+    rgba(129, 204, 207, 1) 5.533854166666667%,
+    rgba(211, 93, 59, 1) 96.67968749999999%
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  mix-blend-mode: multiply;
+}
+.dodge {
+  background: radial-gradient(circle, white, black 35%) center / 15% 15%;
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  right: 0;
+  bottom: 0;
+  mix-blend-mode: color-dodge;
+  animation: dodge-area 3s linear infinite;
+}
+@keyframes dodge-area {
+  to {
+    transform: translate(60%, 60%);
+  }
+}

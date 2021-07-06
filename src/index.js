@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import AutoScrollGallery from './AutoScrollGallery';
 import NavBar from './NavBar';
+import SlidingInfo from './SlidingInfo';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <NavBar />
     <AutoScrollGallery />
+    <SlidingInfo />
   </React.StrictMode>,
   document.getElementById('root')
 );
