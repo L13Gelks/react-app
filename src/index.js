@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AutoScrollGallery from './AutoScrollGallery';
+import NavBar from './NavBar';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NavBar />
+    <AutoScrollGallery />
   </React.StrictMode>,
   document.getElementById('root')
 );
