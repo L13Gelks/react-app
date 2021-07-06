@@ -5,7 +5,7 @@ import App from "./App";
 import AutoScrollGallery from "./AutoScrollGallery";
 import NavBar from "./NavBar";
 import SlidingInfo from "./SlidingInfo";
-import Component from "./Components/Component";
+import Scene from "./Scene";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
@@ -13,7 +13,7 @@ ReactDOM.render(
     <NavBar />
     <AutoScrollGallery />
     <SlidingInfo />
-    <Component />
+    <Scene />
   </React.StrictMode>,
   document.getElementById("root")
 );
