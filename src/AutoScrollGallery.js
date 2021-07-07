@@ -9,11 +9,42 @@ function importAll(r) {
 }
 
 const images = importAll(
-  require.context("./img/landscape/", false, /\.(jpg|jpe?g|svg)$/)
+  require.context("./img/scroll/", false, /\.(jpg|jpe?g|svg)$/)
 );
 
 //
+window.onload = () => {
+  const root = document.documentElement;
+  const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue(
+    "--marquee-elements-displayed"
+  );
+  const marqueeContent = document.querySelector("ul.marquee-content");
 
+  root.style.setProperty("--marquee-elements", marqueeContent.children.length);
+
+  for (let i = 0; i < 4; i++) {
+    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  }
+
+  const gallery = document.querySelectorAll(".marquee-content li"),
+    previewBox = document.querySelector(".preview-box"),
+    previewImg = previewBox.querySelector("img"),
+    closeIcon = previewBox.querySelector(".icon");
+  for (let i = 0; i < gallery.length; i++) {
+    let newIndex = i;
+    gallery[i].onclick = () => {
+      function preview() {
+        let selectedImgUrl = gallery[newIndex].querySelector("img").src;
+        previewImg.src = selectedImgUrl;
+      }
+      preview();
+      previewBox.classList.add("show");
+      closeIcon.onclick = () => {
+        previewBox.classList.remove("show");
+      };
+    };
+  }
+};
 //
 
 const AutoScrollGallery = () => {

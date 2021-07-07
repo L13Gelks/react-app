@@ -1,6 +1,6 @@
 .slidershow {
   height: 50vh;
-  width: 97vw;
+  width: 80vw;
   /*height: 10vh;*/
   overflow: hidden;
 }
@@ -21,7 +21,6 @@
   /*bottom: 20px;*/
   left: 50%;
   transform: translateX(-50%);
-
   /*border: 2px solid #fff;*/
 }
 .bar {

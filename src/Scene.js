@@ -17,13 +17,15 @@ const Model = () => {
 export default function App() {
   return (
     <div className="App">
-      <Canvas>
-        <Suspense fallback={null}>
-          <Model />
-          <OrbitControls />
-          <Environment preset="sunset" background />
-        </Suspense>
-      </Canvas>
+      <div className="viewer">
+        <Canvas>
+          <Suspense fallback={null}>
+            <Model />
+            <OrbitControls />
+            <Environment preset="sunset" background />
+          </Suspense>
+        </Canvas>
+      </div>
     </div>
   );
 }
