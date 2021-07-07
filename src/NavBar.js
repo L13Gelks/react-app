@@ -1,11 +1,12 @@
 import "./css/NavBar.css";
 import MagiClock from "./MagiClock";
+import logo from "./img/icons/icon.png";
 
 const AutoScrollGallery = () => {
   return (
     <div>
       <header>
-        <img class="logo" src="/images/logo.png" alt="logo" />
+        <img class="logo" src={logo} alt="logo" />
         <nav>
           <ul class="nav_links">
             <li>

@@ -5,22 +5,22 @@ import { Environment, OrbitControls } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { Suspense } from "react";
 
-const Model = () => {
-  const gltf = useLoader(GLTFLoader, "./sword.gltf");
+const Model = ({ data }) => {
+  const gltf = useLoader(GLTFLoader, data);
   return (
     <>
-      <primitive object={gltf.scene} scale={0.4} />
+      <primitive object={gltf.scene} scale={1} />
     </>
   );
 };
 
-export default function App() {
+export default function App({ url }) {
   return (
     <div className="App">
       <div className="viewer">
         <Canvas>
           <Suspense fallback={null}>
-            <Model />
+            <Model data={url} />
             <OrbitControls />
             <Environment preset="sunset" background />
           </Suspense>

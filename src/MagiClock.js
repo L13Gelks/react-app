@@ -1,6 +1,4 @@
-import './css/MagiClock.css';
-
-var time = "";
+import "./css/MagiClock.css";
 
 setInterval(function () {
   var date = new Date();
@@ -43,19 +41,25 @@ setInterval(function () {
 }, 1000);
 
 const MagiClock = () => {
-    return (
-        <section id="section">
-        <div class="neon-wrapper">
-          <span class="hour" id="hour">00</span>
-          <span class="col">:</span>
-          <span class="min" id="min">00</span>
-          <span class="col">:</span>
-          <span class="sec" id="sec">00</span>
-          <span class="gradient"></span>
-          <span class="dodge"></span>
-        </div>
-      </section>
-    );
-}
+  return (
+    <section id="section">
+      <div class="neon-wrapper">
+        <span class="hour" id="hour">
+          00
+        </span>
+        <span class="col">:</span>
+        <span class="min" id="min">
+          00
+        </span>
+        <span class="col">:</span>
+        <span class="sec" id="sec">
+          00
+        </span>
+        <span class="gradient"></span>
+        <span class="dodge"></span>
+      </div>
+    </section>
+  );
+};
 
 export default MagiClock;

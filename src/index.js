@@ -13,7 +13,7 @@ ReactDOM.render(
     <NavBar />
     <AutoScrollGallery />
     <SlidingInfo />
-    <Scene />
+    <Scene url="./donuts.gltf" />
   </React.StrictMode>,
   document.getElementById("root")
 );

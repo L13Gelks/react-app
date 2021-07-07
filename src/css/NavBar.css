@@ -8,37 +8,35 @@ button {
   text-decoration: none;
 }
 header {
-    border-bottom: 2px solid rgb(8, 8, 8);
-    background: #111;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*padding: 30px 10%;*/
-    position: sticky;
-    top: 0%;
-    left: 0%;
-    /*background-color: #cabdbd;*/
-    width: 99.9%;
-    margin: auto;
-    z-index: 2;
-    height: 10vh;
-  }
-  .logo {
-    cursor: pointer;
-    height: 8vh;
-    /*background-color: #000000;*/
-  }
-  .nav_links {
-    list-style: none;
-    /*background-color: #000000;*/
-  }
-  .nav_links li {
-    display: inline-block;
-    padding: 0px 20px;
-  }
-  .nav_links li a {
-    transition: all 0.5s ease 0s;
-  }
-  .nav_links li a:hover {
-    color: #0088a9;
-  }
+  border-bottom: 2px solid rgb(8, 8, 8);
+  background: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0%;
+  left: 0%;
+  width: 99.9%;
+  margin: auto;
+  z-index: 2;
+  height: 10vh;
+}
+.logo {
+  position: relative;
+  left: 10px;
+  cursor: pointer;
+  height: 8vh;
+}
+.nav_links {
+  list-style: none;
+}
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+.nav_links li a {
+  transition: all 0.5s ease 0s;
+}
+.nav_links li a:hover {
+  color: #0088a9;
+}

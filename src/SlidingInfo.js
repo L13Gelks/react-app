@@ -14,16 +14,16 @@ const SlidingInfo = () => {
           <input type="radio" name="r" id="r3" />
           <input type="radio" name="r" id="r4" />
           <div class="slide s1">
-            <img src={img1} />
+            <img src={img1} alt="a" />
           </div>
           <div class="slide">
-            <img src={img2} />
+            <img src={img2} alt="a" />
           </div>
           <div class="slide">
-            <img src={img3} />
+            <img src={img3} alt="a" />
           </div>
           <div class="slide">
-            <img src={img4} />
+            <img src={img4} alt="a" />
           </div>
         </div>
         <div class="navigation">

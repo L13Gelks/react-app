@@ -29,7 +29,8 @@ window.onload = () => {
   const gallery = document.querySelectorAll(".marquee-content li"),
     previewBox = document.querySelector(".preview-box"),
     previewImg = previewBox.querySelector("img"),
-    closeIcon = previewBox.querySelector(".icon");
+    closeIcon = previewBox.querySelector(".details .icon");
+
   for (let i = 0; i < gallery.length; i++) {
     let newIndex = i;
     gallery[i].onclick = () => {
@@ -53,40 +54,40 @@ const AutoScrollGallery = () => {
       <div class="marquee">
         <ul class="marquee-content">
           <li>
-            <img src={images["1.jpg"].default} />
+            <img src={images["1.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["2.jpg"].default} />
+            <img src={images["2.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["3.jpg"].default} />
+            <img src={images["3.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["4.jpg"].default} />
+            <img src={images["4.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["5.jpg"].default} />
+            <img src={images["5.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["6.jpg"].default} />
+            <img src={images["6.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["7.jpg"].default} />
+            <img src={images["7.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["8.jpg"].default} />
+            <img src={images["8.jpg"].default} alt="a" />
           </li>
           <li>
-            <img src={images["9.jpg"].default} />
+            <img src={images["9.jpg"].default} alt="a" />
           </li>
         </ul>
       </div>
       <div class="preview-box">
         <div class="details">
-          <span class="icon fas fa-times"></span>
+          <span class="icon">X</span>
         </div>
         <div class="img-box">
-          <img src="" />
+          <img src="" alt="a" />
         </div>
       </div>
     </div>
