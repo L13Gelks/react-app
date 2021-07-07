@@ -1,6 +1,6 @@
-import "./css/NavBar.css";
+import "../../css/NavBar.css";
 import MagiClock from "./MagiClock";
-import logo from "./img/icons/icon.png";
+import logo from "../../img/icons/icon.png";
 
 const AutoScrollGallery = () => {
   return (

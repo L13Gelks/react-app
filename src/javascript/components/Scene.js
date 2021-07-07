@@ -1,4 +1,4 @@
-import "./css/Scene.css";
+import "../../css/Scene.css";
 import { Canvas } from "@react-three/fiber";
 import { useLoader } from "@react-three/fiber";
 import { Environment, OrbitControls } from "@react-three/drei";

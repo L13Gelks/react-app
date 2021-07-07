@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-import AutoScrollGallery from "./AutoScrollGallery";
-import NavBar from "./NavBar";
-import SlidingInfo from "./SlidingInfo";
-import Scene from "./Scene";
+import "./css/index.css";
+import AutoScrollGallery from "./javascript/components/AutoScrollGallery";
+import NavBar from "./javascript/components/NavBar";
+import SlidingInfo from "./javascript/components/SlidingInfo";
+import Scene from "./javascript/components/Scene";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(

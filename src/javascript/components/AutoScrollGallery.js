@@ -1,4 +1,4 @@
-import "./css/AutoScrollGallery.css";
+import "../../css/AutoScrollGallery.css";
 
 function importAll(r) {
   let images = {};
@@ -9,7 +9,7 @@ function importAll(r) {
 }
 
 const images = importAll(
-  require.context("./img/scroll/", false, /\.(jpg|jpe?g|svg)$/)
+  require.context("../../img/scroll/", false, /\.(jpg|jpe?g|svg)$/)
 );
 
 //

@@ -1,4 +1,4 @@
-import "./css/MagiClock.css";
+import "../../css/MagiClock.css";
 
 setInterval(function () {
   var date = new Date();
