@@ -11,7 +11,7 @@ function importAll(r) {
 const images = importAll(
   require.context("../../img/scroll/", false, /\.(jpg|jpe?g|svg)$/)
 );
-
+/*
 //
 window.onload = () => {
   const root = document.documentElement;
@@ -45,7 +45,7 @@ window.onload = () => {
       };
     };
   }
-};
+};*/
 //
 
 const AutoScrollGallery = () => {

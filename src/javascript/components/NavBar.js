@@ -4,7 +4,7 @@ import logo from "../../img/icons/icon.png";
 import Home from "../../home";
 import About from "../../about";
 
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 const NavBar = () => {
