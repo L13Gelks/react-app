@@ -1,18 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./css/index.css";
-import AutoScrollGallery from "./javascript/components/AutoScrollGallery";
-import NavBar from "./javascript/components/NavBar";
-import SlidingInfo from "./javascript/components/SlidingInfo";
-import Scene from "./javascript/components/Scene";
 import reportWebVitals from "./reportWebVitals";
+import App from "./App";
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar />
-    <AutoScrollGallery />
-    <SlidingInfo />
-    <Scene url="./donuts.gltf" />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

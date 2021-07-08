@@ -1,18 +1,16 @@
-import "./App.css";
 import AutoScrollGallery from "./javascript/components/AutoScrollGallery";
 import NavBar from "./javascript/components/NavBar";
 import SlidingInfo from "./javascript/components/SlidingInfo";
 import Scene from "./javascript/components/Scene";
 
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-function App() {
+function home() {
   return (
     <div>
-      <NavBar />
+      <AutoScrollGallery />
+      <SlidingInfo />
+      <Scene url="./donuts.gltf" />
     </div>
   );
 }
 
-export default App;
+export default home;

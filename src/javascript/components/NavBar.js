@@ -1,26 +1,41 @@
 import "../../css/NavBar.css";
 import MagiClock from "./MagiClock";
 import logo from "../../img/icons/icon.png";
+import Home from "../../home";
+import About from "../../about";
 
-const AutoScrollGallery = () => {
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
+const NavBar = () => {
   return (
     <div>
-      <header>
-        <img class="logo" src={logo} alt="logo" />
-        <nav>
-          <ul class="nav_links">
-            <li>
-              <a href="./index.js">Home</a>
-            </li>
-            <li>
-              <a href="#about">About Me</a>
-            </li>
-          </ul>
-        </nav>
-        <MagiClock />
-      </header>
+      <Router>
+        <header>
+          <img class="logo" src={logo} alt="logo" />
+          <nav>
+            <ul class="nav_links">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+            </ul>
+          </nav>
+          <MagiClock />
+        </header>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 };
 
-export default AutoScrollGallery;
+export default NavBar;
