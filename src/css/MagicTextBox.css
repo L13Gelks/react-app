@@ -22,5 +22,19 @@ p {
   color: white;
 }
 a {
+  margin-top: 20px;
   color: white;
+}
+#more {
+  display: none;
+}
+#myBtn {
+  font-size: 10px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#myBtn:hover {
+  color: #0088a9;
 }
