@@ -6,17 +6,20 @@
 :root {
   --marquee-width: 97vw;
   --marquee-height: 40vh;
-  /*--marquee-elements: 9;*/
+  --marquee-elements: 9;
   --marquee-elements-displayed: 4;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
   --marquee-animation-duration: calc(var(--marquee-elements) * 4s);
 }
-
-.marquee {
+.marquee-container {
+  display: flex;
   width: var(--marquee-width);
   height: var(--marquee-height);
+  align-items: center;
+}
+.marquee {
   background-color: #111;
   color: tomato;
   overflow: hidden;
@@ -24,6 +27,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 .marquee:before,
 .marquee:after {
   position: absolute;
@@ -33,20 +37,25 @@
   content: "";
   z-index: 1;
 }
+
 .marquee:before {
   left: 0;
   background: linear-gradient(to right, #111 0%, transparent 100%);
 }
+
 .marquee:after {
   right: 0;
   background: linear-gradient(to left, #111 0%, transparent 100%);
 }
+
 .marquee-content {
   list-style: none;
   height: 100%;
   display: flex;
+  height: fit-content;
   animation: scrolling var(--marquee-animation-duration) linear infinite;
 }
+
 @keyframes scrolling {
   0% {
     transform: translateX(0vw);
@@ -57,9 +66,11 @@
     );
   }
 }
+
 .marquee-content:hover {
   animation-play-state: paused;
 }
+
 .marquee-content li {
   display: flex;
   justify-content: center;
@@ -70,15 +81,18 @@
   white-space: nowrap;
   padding: 1px;
 }
-.marquee-content li:hover {
+
+.marquee-content li img:hover {
   border: 2px solid #eee;
   cursor: pointer;
 }
+
 .marquee-content li img {
   width: 100%;
   height: auto;
   border: 2px solid rgb(37, 37, 37);
 }
+
 .preview-box {
   position: fixed;
   max-width: 790px;
@@ -94,24 +108,50 @@
   border-radius: 3px;
   z-index: 1;
 }
+
 .preview-box.show {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
   transition: all 0.3s ease;
 }
+
 .preview-box .img-box {
   display: flex;
   width: 100%;
 }
+
 .preview-box .img-box img {
   width: 100%;
 }
+
 .preview-box .details {
   display: flex;
   justify-content: flex-end;
 }
+
 .preview-box .details .icon {
   color: #0088a9;
   cursor: pointer;
+}
+
+@media (max-height: 850px) and (orientation: portrait) {
+  :root {
+    --marquee-height: 90vh;
+    --marquee-elements: 9;
+    --marquee-elements-displayed: 4;
+    --marquee-element-width: calc(
+      var(--marquee-width) / var(--marquee-elements-displayed) * 3.5
+    );
+    --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
+  }
+  .marquee:before,
+  .marquee:after {
+    width: 2rem;
+  }
+}
+@media (max-height: 450px) and (orientation: landscape) {
+  .box {
+    background-color: blue;
+  }
 }

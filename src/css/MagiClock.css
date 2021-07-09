@@ -3,10 +3,12 @@
   justify-content: center;
   height: 80%;
   width: auto;
-  border: 2px solid #0088a9;
+  border: 2px solid white;
   background-color: black;
   border-radius: 5px;
-  overflow-x: hidden;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
   right: 20px;
 }
 
@@ -20,6 +22,7 @@
   text-transform: uppercase;
   user-select: none;
 }
+
 .col {
   display: inline-block;
   color: white;
@@ -34,34 +37,39 @@
   mix-blend-mode: difference;
   filter: blur(3px);
 }
+
 .min::before {
   content: attr(min-value);
   position: absolute;
   mix-blend-mode: difference;
   filter: blur(3px);
 }
+
 .sec::before {
   content: attr(sec-value);
   position: absolute;
   mix-blend-mode: difference;
   filter: blur(3px);
 }
+
 .col::before {
   content: ":";
   position: absolute;
   mix-blend-mode: difference;
   filter: blur(3px);
 }
+
 .neon-wrapper {
   display: inline-flex;
   filter: brightness(100%);
   overflow: hidden;
 }
+
 .gradient {
   background: linear-gradient(
     110.8210951619775deg,
-    rgba(129, 204, 207, 1) 5.533854166666667%,
-    rgba(211, 93, 59, 1) 96.67968749999999%
+    #0088a9,
+    rgba(129, 204, 207, 0.849) 5.533854166666667%
   );
   position: absolute;
   top: 0;
@@ -70,6 +78,7 @@
   width: 100%;
   mix-blend-mode: multiply;
 }
+
 .dodge {
   background: radial-gradient(circle, white, black 35%) center / 15% 15%;
   position: absolute;
@@ -80,8 +89,34 @@
   mix-blend-mode: color-dodge;
   animation: dodge-area 3s linear infinite;
 }
+
 @keyframes dodge-area {
   to {
     transform: translate(60%, 60%);
+  }
+}
+
+@media (max-height: 850px) and (orientation: portrait) {
+  #section {
+    height: 40%;
+    width: 17vw;
+    border: 1px solid white;
+    border-radius: 5px;
+    right: 10px;
+  }
+  .hour,
+  .min,
+  .sec {
+    font-size: 4vw;
+  }
+
+  .col {
+    font-size: 3.3vw;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+  .box {
+    background-color: blue;
   }
 }

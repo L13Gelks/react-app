@@ -52,7 +52,7 @@ window.onload = () => {
 
 function AutoScrollGallery() {
   return (
-    <div>
+    <div class="marquee-container">
       <div class="marquee">
         <ul class="marquee-content">
           <li>
