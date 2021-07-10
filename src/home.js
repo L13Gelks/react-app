@@ -1,5 +1,4 @@
 import AutoScrollGallery from "./javascript/components/AutoScrollGallery";
-import NavBar from "./javascript/components/NavBar";
 import SlidingInfo from "./javascript/components/SlidingInfo";
 import Scene from "./javascript/components/Scene";
 

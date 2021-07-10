@@ -1,6 +1,6 @@
 import "../../css/NavBar.css";
+import Account from "./Account";
 import MagiClock from "./MagiClock";
-import logo from "../../img/icons/icon.png";
 import Home from "../../home";
 import About from "../../about";
 
@@ -12,7 +12,7 @@ const NavBar = () => {
     <div>
       <Router>
         <header>
-          <img class="logo" src={logo} alt="logo" />
+          <Link to="/account">Account</Link>
           <nav>
             <ul class="nav_links">
               <li>
@@ -28,6 +28,9 @@ const NavBar = () => {
         <Switch>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path="/account">
+            <Account />
           </Route>
           <Route path="/">
             <Home />

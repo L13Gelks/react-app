@@ -21,12 +21,6 @@ header {
   z-index: 2;
   height: 10vh;
 }
-.logo {
-  position: relative;
-  left: 10px;
-  cursor: pointer;
-  height: 8vh;
-}
 .nav_links {
   list-style: none;
 }
