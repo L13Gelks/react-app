@@ -1,5 +1,5 @@
 import "../../css/Account.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Axios from "axios";
 
 function Account() {
@@ -13,6 +13,7 @@ function Account() {
 
   const [usersList, setUsersList] = useState([]);
 
+  Axios.defaults.withCredentials = true;
   const createUser = () => {
     Axios.post("http://localhost:3001/create", {
       name: nameReg,
@@ -42,6 +43,14 @@ function Account() {
     });
   };*/
 
+  useEffect(() => {
+    Axios.get("http://localhost:3001/login").then((response) => {
+      if (response.data.loggedIn == true) {
+        setLogInStatus(response.data.user[0].name);
+      }
+    });
+  }, []);
+
   return (
     <div className="account">
       <div className="register">
@@ -67,7 +76,7 @@ function Account() {
           onChange={(event) => setPassword(event.target.value)}
         />
         <button onClick={showUser}>Login</button>
-        <h1>{logInStatus}</h1>
+        {logInStatus}
       </div>
     </div>
   );
