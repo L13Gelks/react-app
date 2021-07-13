@@ -34,3 +34,10 @@ header {
 .nav_links li a:hover {
   color: #0088a9;
 }
+#my-profile-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px;
+}

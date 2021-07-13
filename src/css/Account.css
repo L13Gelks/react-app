@@ -1,15 +1,18 @@
 .account {
+  width: 100%;
+  height: 90vh;
+}
+.account-components {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 90vh;
+  height: 100%;
   align-items: center;
   justify-content: center;
-  background-color: salmon;
 }
-.register {
-  height: 30vh;
-}
-.login {
-  height: 30vh;
+#create-account-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
 }

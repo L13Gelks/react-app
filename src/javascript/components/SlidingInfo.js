@@ -1,8 +1,8 @@
 import "../../css/SlidingInfo.css";
-import img1 from "../../img/landscape/1.jpg";
-import img2 from "../../img/landscape/2.jpg";
-import img3 from "../../img/landscape/3.jpg";
-import img4 from "../../img/landscape/4.jpg";
+import img1 from "../../img/scroll/1.jpg";
+import img2 from "../../img/scroll/2.jpg";
+import img3 from "../../img/scroll/3.jpg";
+import img4 from "../../img/scroll/4.jpg";
 
 const SlidingInfo = () => {
   return (

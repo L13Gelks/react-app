@@ -1,0 +1,81 @@
+.contactForm {
+  display: flex;
+  width: 20vw;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.555);
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.myForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contactForm h2 {
+  font-size: 2rem;
+  color: rgb(255, 254, 254);
+  font-weight: 500;
+  user-select: none;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.contactForm .inputBox {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid black;
+  outline: none;
+}
+.contactForm .inputBox span {
+  position: absolute;
+  left: 10px;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.6s;
+  color: rgb(0, 0, 0);
+}
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+  color: rgba(255, 255, 255, 0.774);
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+#formSubmitButton {
+  width: 100px;
+  background: #00bcd4;
+  color: rgb(0, 0, 0);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1rem;
+}
+#formWarning {
+  font-size: 1rem;
+  color: red;
+}
+
+@media (max-height: 850px) and (orientation: portrait) {
+  .contactForm {
+    width: 50vw;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+}

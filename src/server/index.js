@@ -33,7 +33,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: {
-      expires: 60 * 60 * 24,
+      expires: 1000 * 60 * 60 * 24,
     },
   })
 );
@@ -53,17 +53,26 @@ app.post("/create", (req, res) => {
     if (err) {
       console.log(err);
     }
-    db.query(
-      "INSERT INTO users (name,password) VALUES (?,?)",
-      [name, hash],
-      (err, result) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.send("Values Inserted");
-        }
+    db.query("SELECT * FROM users WHERE name = ?", name, (err, result) => {
+      if (err) {
+        res.send({ err: err });
       }
-    );
+      if (result.length > 0) {
+        res.send({ message: "User already exists" });
+      } else {
+        db.query(
+          "INSERT INTO users (name,password,img) VALUES (?,?,?)",
+          [name, hash, "default"],
+          (err, result) => {
+            if (err) {
+              console.log(err);
+            } else {
+              res.send({ message: "Values Inserted" });
+            }
+          }
+        );
+      }
+    });
   });
 });
 
@@ -99,15 +108,68 @@ app.post("/login", (req, res) => {
   });
 });
 
-/*app.get("/users", (req, res) => {
+app.get("/logout", (req, res) => {
+  if (req.session.user) {
+    req.session.destroy();
+    req.session.regenerate();
+  }
+});
+
+//change user-info when logged in inside Navbar
+app.get("/user-icon", (req, res) => {
+  if (req.session.user) {
+    res.send({ loggedIn: true, user: req.session.user });
+  } else {
+    res.send({ loggedIn: false });
+  }
+});
+//get all users names for chat
+app.get("/getUsers", (req, res) => {
   db.query("SELECT * FROM users", (err, result) => {
     if (err) {
-      console.log(err);
-    } else {
+      res.send({ err: err });
+    }
+    if (result.length > 0) {
       res.send(result);
     }
   });
-});*/
+});
+//get All messages from users
+app.post("/getMessages", (req, res) => {
+  const user = req.body.user;
+  const friend = req.body.friend;
+
+  db.query(
+    "SELECT * FROM users_messages WHERE user = ? OR user = ?",
+    [user + "-" + friend, friend + "-" + user],
+    (err, result) => {
+      if (err) {
+        res.send({ err: err });
+      }
+      if (result.length > 0) {
+        res.send(result);
+      }
+    }
+  );
+});
+
+app.post("/setMessages", (req, res) => {
+  const user = req.body.user;
+  const friend = req.body.friend;
+  const message = req.body.message;
+
+  db.query(
+    "INSERT INTO users_messages (user,message) VALUES (?,?)",
+    [user + "-" + friend, message],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send({ message: "Values Inserted" });
+      }
+    }
+  );
+});
 
 app.listen(3001, () => {
   console.log("YEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");

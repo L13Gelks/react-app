@@ -8,7 +8,8 @@ var message =
 var link = "#";
 //Me
 var title_me = "My Info";
-var message_me = "My name is Yadir Rojas Delgado a university student";
+var message_me =
+  "My name is Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, a!";
 var link_me = "#link-me";
 //Lore
 var title_lore = "Lorem";

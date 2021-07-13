@@ -1,0 +1,31 @@
+.my-acccount {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.contacts-left {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contacts-right {
+  width: 59vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-height: 850px) and (orientation: portrait) {
+  .contacts-left {
+    width: 20vw;
+  }
+  .contacts-right {
+    width: 69vw;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+}

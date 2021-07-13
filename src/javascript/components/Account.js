@@ -2,40 +2,16 @@ import "../../css/Account.css";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 
+import Login from "./Login";
+import Register from "./Register";
+import MyAccount from "./MyAccount";
+
 function Account() {
-  const [nameReg, setNameReg] = useState("");
-  const [passwordReg, setPasswordReg] = useState("");
-
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [logInStatus, setLogInStatus] = useState("");
+  const [accountState, setAccountState] = useState("");
 
   const [usersList, setUsersList] = useState([]);
 
   Axios.defaults.withCredentials = true;
-  const createUser = () => {
-    Axios.post("http://localhost:3001/create", {
-      name: nameReg,
-      password: passwordReg,
-    }).then(() => {
-      console.log("Done!");
-    });
-  };
-
-  const showUser = () => {
-    Axios.post("http://localhost:3001/login", {
-      name: name,
-      password: password,
-    }).then((response) => {
-      console.log(response);
-      if (response.data.message) {
-        setLogInStatus(response.data.message);
-      } else {
-        setLogInStatus(response.data[0].name);
-      }
-    });
-  };
 
   /*const showUser = () => {
     Axios.get("http://localhost:3001/users").then((response) => {
@@ -46,40 +22,52 @@ function Account() {
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
       if (response.data.loggedIn == true) {
-        setLogInStatus(response.data.user[0].name);
+        setAccountState(response.data.user[0].name);
+      } else {
+        setAccountState("");
       }
     });
   }, []);
 
-  return (
-    <div className="account">
-      <div className="register">
-        <label htmlFor="">Name</label>
-        <input
-          type="text"
-          onChange={(event) => setNameReg(event.target.value)}
-        />
-        <label htmlFor="">Password</label>
-        <input
-          type="text"
-          onChange={(event) => setPasswordReg(event.target.value)}
-        />
-        <button onClick={createUser}>Register</button>
-      </div>
+  const registerAccount = () => {
+    setAccountState("register");
+  };
 
-      <div className="login">
-        <label htmlFor="">Name</label>
-        <input type="text" onChange={(event) => setName(event.target.value)} />
-        <label htmlFor="">Password</label>
-        <input
-          type="text"
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        <button onClick={showUser}>Login</button>
-        {logInStatus}
-      </div>
-    </div>
-  );
+  const goBack = () => {
+    setAccountState("");
+  };
+
+  function renderSwitch(param) {
+    switch (param) {
+      case "":
+        return (
+          <div className="account-components">
+            <Login />
+            <button id="create-account-button" onClick={registerAccount}>
+              Create an account
+            </button>
+          </div>
+        );
+      case "register":
+        return (
+          <div className="account-components">
+            <Register />
+            <button id="create-account-button" onClick={goBack}>
+              Go back
+            </button>
+          </div>
+        );
+
+      default:
+        return (
+          <div className="account-components">
+            <MyAccount user={accountState} />;
+          </div>
+        );
+    }
+  }
+
+  return <div className="account">{renderSwitch(accountState)}</div>;
 }
 
 export default Account;
