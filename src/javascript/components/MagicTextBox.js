@@ -1,24 +1,10 @@
 import "../../css/MagicTextBox.css";
 
-const MagicTextBox = ({ title, message, link }) => {
-  let size_rest = 150;
-  if (message.length > size_rest) {
-    for (var index = 0; index < message.length; index++) {
-      if (index == size_rest) {
-        var first_part_str = message.substr(0, index);
-        var dots = <span id="dots">...</span>;
-        var second_part_str = <span id="more"> {message.substr(index)} </span>;
-        var button = (
-          <button onClick={myFunction} id="myBtn">
-            Read more
-          </button>
-        );
-      }
-    }
-  } else {
-    var first_part_str = message;
-  }
+const MyNormalMessage = ({ myMessage }) => {
+  return <>{myMessage}</>;
+};
 
+const MyComplexMessage = ({ myMessage, index }) => {
   function myFunction(event) {
     event.target.style.visibility = "hidden";
     var dots = document.querySelectorAll("[id=dots]");
@@ -40,14 +26,41 @@ const MagicTextBox = ({ title, message, link }) => {
       }
     }
   }
+
+  var first_part_str = myMessage.substr(0, index);
+  var second_part_str = myMessage.substr(index);
+
+  return (
+    <>
+      {first_part_str}
+      <span id="dots">...</span>
+      <span id="more"> {second_part_str} </span>{" "}
+      <button onClick={myFunction} id="myBtn">
+        Read more
+      </button>
+    </>
+  );
+};
+
+const MagicTextBox = ({ title, message, link }) => {
+  //length of text before adding "... read more" option
+  let textSize = 150;
+  var textExceded = false;
+
+  if (message.length > textSize) {
+    textExceded = true;
+  }
+
   return (
     <div className="box">
+      {" "}
       <h2>{title}</h2>
       <p>
-        {first_part_str}
-        {dots}
-        {second_part_str}
-        {button}
+        {textExceded ? (
+          <MyComplexMessage myMessage={message} index={textSize} />
+        ) : (
+          <MyNormalMessage myMessage={message} />
+        )}
       </p>
       <a href="#">{link}</a>
     </div>

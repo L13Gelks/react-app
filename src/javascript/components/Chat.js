@@ -29,7 +29,9 @@ function Chat({ user, friend }) {
       user: user,
       friend: friend,
     }).then((response) => {
-      if (response) {
+      if (response.data.message) {
+        setMessageVector([]);
+      } else if (response) {
         var vetor = [];
         var typeofUser = "";
         response.data.forEach((element) => {

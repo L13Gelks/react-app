@@ -148,6 +148,8 @@ app.post("/getMessages", (req, res) => {
       }
       if (result.length > 0) {
         res.send(result);
+      } else {
+        res.send({ message: "nope" });
       }
     }
   );

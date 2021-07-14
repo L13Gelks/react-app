@@ -160,6 +160,9 @@
 }
 
 @media (max-height: 850px) and (orientation: portrait) {
+  .wrapper {
+    width: 60vw;
+  }
   .user {
     width: 20px;
     height: 20px;

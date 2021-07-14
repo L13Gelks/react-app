@@ -9,15 +9,7 @@ import MyAccount from "./MyAccount";
 function Account() {
   const [accountState, setAccountState] = useState("");
 
-  const [usersList, setUsersList] = useState([]);
-
   Axios.defaults.withCredentials = true;
-
-  /*const showUser = () => {
-    Axios.get("http://localhost:3001/users").then((response) => {
-      setUsersList(response);
-    });
-  };*/
 
   useEffect(() => {
     Axios.get("http://localhost:3001/login").then((response) => {
