@@ -5,9 +5,9 @@
 }
 :root {
   --marquee-width: 97vw;
-  --marquee-height: 40vh;
+  --marquee-height: 90vh;
   --marquee-elements: 9;
-  --marquee-elements-displayed: 4;
+  --marquee-elements-displayed: 2;
   --marquee-element-width: calc(
     var(--marquee-width) / var(--marquee-elements-displayed)
   );
@@ -137,12 +137,7 @@
 
 @media (max-height: 850px) and (orientation: portrait) {
   :root {
-    --marquee-height: 90vh;
-    --marquee-elements: 9;
-    --marquee-elements-displayed: 4;
-    --marquee-element-width: calc(
-      var(--marquee-width) / var(--marquee-elements-displayed) * 3.5
-    );
+    --marquee-elements-displayed: 1;
     --marquee-animation-duration: calc(var(--marquee-elements) * 6s);
   }
   .marquee:before,
