@@ -1,15 +1,11 @@
 #section {
   position: relative;
   justify-content: center;
-  height: 80%;
+  height: 100%;
   width: auto;
-  border: 2px solid white;
   background-color: black;
   border-radius: 5px;
   overflow: hidden;
-  padding-left: 5px;
-  padding-right: 5px;
-  right: 20px;
 }
 
 .hour,
@@ -98,11 +94,10 @@
 
 @media (max-height: 850px) and (orientation: portrait) {
   #section {
-    height: 40%;
+    height: 100%;
     width: 17vw;
     border: 1px solid white;
     border-radius: 5px;
-    right: 10px;
   }
   .hour,
   .min,

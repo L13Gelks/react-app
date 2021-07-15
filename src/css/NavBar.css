@@ -41,11 +41,28 @@ header {
   margin: 10px;
 }
 
+#clockToggler {
+  position: relative;
+  justify-content: center;
+  height: 80%;
+  border: 2px solid white;
+  background-color: black;
+  border-radius: 5px;
+  right: 20px;
+}
+
 @media (max-height: 850px) and (orientation: portrait) {
   li,
   a,
   button {
     font-size: 3vw;
+  }
+  #clockToggler {
+    height: 40%;
+    width: 17vw;
+    border: 1px solid white;
+    border-radius: 5px;
+    right: 10px;
   }
 }
 

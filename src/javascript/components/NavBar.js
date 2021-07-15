@@ -12,6 +12,7 @@ import Axios from "axios";
 
 const NavBar = () => {
   const [accountName, setAccountName] = useState("Account");
+  const [showClock, setShowClock] = useState(false);
 
   useEffect(() => {
     Axios.get("http://localhost:3001/user-icon").then((response) => {
@@ -22,6 +23,10 @@ const NavBar = () => {
       }
     });
   }, []);
+
+  const showClockFunction = () => {
+    setShowClock((prev) => !prev);
+  };
 
   return (
     <div>
@@ -41,7 +46,15 @@ const NavBar = () => {
               </li>
             </ul>
           </nav>
-          <MagiClock />
+          {showClock ? (
+            <button id="clockToggler" onClick={showClockFunction}>
+              <MagiClock showClock={showClock} />
+            </button>
+          ) : (
+            <button id="clockToggler" onClick={showClockFunction}>
+              Clock
+            </button>
+          )}
         </header>
         <Switch>
           <Route path="/about">
