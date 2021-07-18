@@ -19,6 +19,7 @@ header {
   width: 99.9%;
   margin: auto;
   height: 10vh;
+  z-index: 999;
 }
 .nav_links {
   list-style: none;

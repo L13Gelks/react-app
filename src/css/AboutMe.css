@@ -1,0 +1,8 @@
+.about-me-background {
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}

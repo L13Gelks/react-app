@@ -5,6 +5,7 @@ import ProfilePicture from "./ProfilePicture";
 import MagiClock from "./MagiClock";
 import Home from "../../home";
 import About from "../../about";
+import AboutMe from "../main/AboutMe";
 
 import React from "react";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
@@ -57,14 +58,17 @@ const NavBar = () => {
           )}
         </header>
         <Switch>
-          <Route path="/about">
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
             <About />
           </Route>
-          <Route path="/account">
+          <Route exact path="/account">
             <Account />
           </Route>
-          <Route path="/">
-            <Home />
+          <Route exact path="/about-me">
+            <AboutMe />
           </Route>
         </Switch>
       </Router>

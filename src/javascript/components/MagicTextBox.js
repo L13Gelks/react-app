@@ -1,4 +1,5 @@
 import "../../css/MagicTextBox.css";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 const MyNormalMessage = ({ myMessage }) => {
   return <>{myMessage}</>;
@@ -42,7 +43,7 @@ const MyComplexMessage = ({ myMessage, index }) => {
   );
 };
 
-const MagicTextBox = ({ title, message, link }) => {
+const MagicTextBox = ({ title, message, link, linkName }) => {
   //length of text before adding "... read more" option
   let textSize = 150;
   var textExceded = false;
@@ -62,7 +63,7 @@ const MagicTextBox = ({ title, message, link }) => {
           <MyNormalMessage myMessage={message} />
         )}
       </p>
-      <a href="#">{link}</a>
+      <Link to={link}>{linkName}</Link>
     </div>
   );
 };

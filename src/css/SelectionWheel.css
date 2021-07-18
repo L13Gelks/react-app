@@ -1,0 +1,253 @@
+:root {
+  --circle-radius: 30vh;
+  --inner-circle-radius: 5vh;
+}
+
+.background {
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wheel-container {
+  transform: translateY(calc(var(--circle-radius) * 1.54));
+}
+.wheel-container-default {
+  transform: translateY(0);
+}
+
+.selection-wheel-background {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--circle-radius) * 2.07);
+  height: calc(var(--circle-radius) * 2.07);
+  border-radius: 50%;
+  animation: rotation-animation 0.5s linear forwards infinite normal,
+    opacity-animation 1s linear forwards;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border: 3px solid rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.selection-wheel-background-default {
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--circle-radius) * 2.07);
+  height: calc(var(--circle-radius) * 2.07);
+  border-radius: 50%;
+  animation: rotation-animation 10s linear forwards infinite normal,
+    opacity-animation 1s linear forwards;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border: 3px solid rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.wrapper-text:not(:hover) {
+  animation: opacity-animation 0.1s linear forwards;
+}
+
+.selection-wheel-background-default:hover {
+  animation: rotation-animation 10s linear forwards infinite normal,
+    opacity-animation 2s linear forwards infinite alternate;
+  animation-play-state: paused;
+  border: 1px solid transparent;
+  --circle-radius: 31vh;
+}
+
+@keyframes rotation-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+@keyframes auto-opacity-animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*first*/
+.selection-wheel-top,
+.selection-wheel-top img {
+  z-index: 1;
+  position: absolute;
+  width: var(--circle-radius);
+  height: var(--circle-radius);
+  transform: translateY(-70%) translateX(0%) rotate(45deg);
+  border-top-left-radius: var(--circle-radius);
+}
+.selection-wheel-background-default .selection-wheel-top:hover {
+  transform: translateY(-75%) translateX(0%) rotate(45deg);
+}
+.selection-wheel-top img {
+  transform: rotate(0deg);
+  border: none;
+}
+/*first*/
+/*third*/
+.selection-wheel-right,
+.selection-wheel-right img {
+  z-index: 1;
+  position: absolute;
+  width: var(--circle-radius);
+  height: var(--circle-radius);
+  transform: translateY(0) translateX(70%) rotate(45deg);
+  border-top-right-radius: var(--circle-radius);
+}
+.selection-wheel-background-default .selection-wheel-right:hover {
+  transform: translateY(0) translateX(75%) rotate(45deg);
+}
+.selection-wheel-right img {
+  transform: rotate(0deg);
+  border: none;
+}
+/*third*/
+
+/*fifth*/
+.selection-wheel-bottom,
+.selection-wheel-bottom img {
+  z-index: 1;
+  position: absolute;
+  width: var(--circle-radius);
+  height: var(--circle-radius);
+  transform: translateY(70%) translateX(0%) rotate(45deg);
+  border-bottom-right-radius: var(--circle-radius);
+}
+.selection-wheel-background-default .selection-wheel-bottom:hover {
+  transform: translateY(75%) translateX(0%) rotate(45deg);
+}
+.selection-wheel-bottom img {
+  transform: rotate(0deg);
+  border: none;
+}
+/*fifth*/
+
+/*seventh*/
+.selection-wheel-left,
+.selection-wheel-left img {
+  z-index: 1;
+  position: absolute;
+  width: var(--circle-radius);
+  height: var(--circle-radius);
+  transform: translateY(0) translateX(-70%) rotate(45deg);
+  border-bottom-left-radius: var(--circle-radius);
+}
+.selection-wheel-background-default .selection-wheel-left:hover {
+  transform: translateY(0) translateX(-75%) rotate(45deg);
+}
+.selection-wheel-left img {
+  transform: rotate(0deg);
+  border: none;
+}
+/*seventh*/
+/*///////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////////////////////////////*/
+.inner-wheel-wrapper {
+  width: var(--inner-circle-radius);
+  height: var(--inner-circle-radius);
+}
+/*first*/
+.inner-wheel-top {
+  z-index: 1;
+  position: absolute;
+  width: var(--inner-circle-radius);
+  height: var(--inner-circle-radius);
+  transform: translateY(-70%) translateX(0%) rotate(45deg);
+  border-top-left-radius: var(--inner-circle-radius);
+  background-color: #111;
+  border-top: 10px solid rgba(255, 255, 255, 0.13);
+  border-left: 10px solid rgba(255, 255, 255, 0.13);
+}
+/*first*/
+/*third*/
+.inner-wheel-right {
+  z-index: 1;
+  position: absolute;
+  width: var(--inner-circle-radius);
+  height: var(--inner-circle-radius);
+  transform: translateY(0) translateX(68%) rotate(45deg);
+  border-top-right-radius: var(--circle-radius);
+  background-color: #111;
+  border-top: 10px solid rgba(255, 255, 255, 0.13);
+  border-right: 10px solid rgba(255, 255, 255, 0.13);
+}
+/*third*/
+
+/*fifth*/
+.inner-wheel-bottom {
+  z-index: 1;
+  position: absolute;
+  width: var(--inner-circle-radius);
+  height: var(--inner-circle-radius);
+  transform: translateY(70%) translateX(0%) rotate(45deg);
+  border-bottom-right-radius: var(--circle-radius);
+  background-color: #111;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.13);
+  border-right: 10px solid rgba(255, 255, 255, 0.13);
+}
+/*fifth*/
+
+/*seventh*/
+.inner-wheel-left {
+  z-index: 1;
+  position: absolute;
+  width: var(--inner-circle-radius);
+  height: var(--inner-circle-radius);
+  transform: translateY(0) translateX(-68%) rotate(45deg);
+  border-bottom-left-radius: var(--circle-radius);
+  background-color: #111;
+  border-bottom: 10px solid rgba(255, 255, 255, 0.13);
+  border-left: 10px solid rgba(255, 255, 255, 0.13);
+}
+
+@media (max-height: 850px) and (orientation: portrait) {
+  :root {
+    --circle-radius: 33vw;
+    --inner-circle-radius: 6vw;
+  }
+
+  .wheel-container {
+    transform: translateY(calc(var(--circle-radius) * 2));
+  }
+
+  .background {
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .selection-wheel-background-default:hover {
+    animation: rotation-animation 10s linear forwards infinite normal,
+      opacity-animation 2s linear forwards infinite alternate;
+    animation-play-state: paused;
+    border: 1px solid transparent;
+    --circle-radius: 34vw;
+  }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+  .box {
+    background-color: blue;
+  }
+}

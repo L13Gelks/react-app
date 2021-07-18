@@ -21,15 +21,21 @@ var link_lore = "#";
 function about() {
   return (
     <div className="about">
-      <MagicTextBox title={title_me} message={message_me} link={link_me} />
-      <MagicTextBox title={title} message={message} link={link} />
+      <MagicTextBox
+        title={title_me}
+        message={message_me}
+        link={"/about-me"}
+        linkName={"About Me"}
+      />
+      <MagicTextBox title={title} message={message} link={link} linkName={""} />
       <MagicTextBox
         title={title_lore}
         message={message_lore}
         link={link_lore}
+        linkName={""}
       />
-      <MagicTextBox title={title} message={message} link={link} />
-      <MagicTextBox title={title} message={message} link={link} />
+      <MagicTextBox title={title} message={message} link={link} linkName={""} />
+      <MagicTextBox title={title} message={message} link={link} linkName={""} />
     </div>
   );
 }
